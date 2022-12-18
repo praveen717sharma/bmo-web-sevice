@@ -50,6 +50,6 @@ public class HelloController {
 		String resultgSchool = input.get("school");
 
 		return resultName + " " + resultAge + " " + resultgGender +" "+resultgSchool;
-
+		//comment for git demo
 	}
 }
