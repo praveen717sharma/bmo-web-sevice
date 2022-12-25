@@ -8,8 +8,10 @@ public interface TradeService {
 	
 	public abstract Trade saveTrade(Trade trade);
 	
-	public abstract Trade deleteTradebyId(int id);
+	public abstract void deleteTradebyId(int id);
 	
-	public abstract Trade updateTradebyId(int id);
+	public abstract Trade updateTrade(Trade trade);
 
 }
+
+

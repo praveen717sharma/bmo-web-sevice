@@ -20,14 +20,13 @@ public class TradeController {
 	@Autowired
 	private TradeService tradeService;
 
-	@GetMapping("getTrade/{id}")
+	@GetMapping("trade/{id}")
 	public ResponseEntity<Trade> getTrade(@PathVariable("id") Integer myId) {
 
 		Trade trade = tradeService.getTradebyId(myId);
 		return new ResponseEntity<Trade>(trade, HttpStatus.OK);
 	}
-	 
-
+	
 	@PostMapping("trade")
 	public ResponseEntity<Trade> saveTrade(@RequestBody Trade myTrade) {
 		
@@ -37,16 +36,18 @@ public class TradeController {
 	}
 
 	@DeleteMapping("trade/{id}")
-	public ResponseEntity<Trade> deleteTradeId(@PathVariable("id") Integer myId) {
+	public ResponseEntity<String> deleteTradeId(@PathVariable("id") Integer myId) {
 
-		Trade trade = tradeService.deleteTradebyId(myId);
-		return new ResponseEntity<Trade>(trade, HttpStatus.OK);
+		tradeService.deleteTradebyId(myId);
+		return new ResponseEntity<String>("Deleted", HttpStatus.OK);
 	}
  
-	@PutMapping("update/{id}")
-	public ResponseEntity<Trade> updateTrade(@PathVariable("id") Integer id, @RequestBody Trade trade) {
-
-		return new ResponseEntity<Trade>(trade, HttpStatus.OK);
+	@PutMapping("trade")
+	public ResponseEntity<Trade> updateTrade(@RequestBody Trade trade) {
+		
+		
+		Trade newTrade = tradeService.updateTrade(trade);
+		return new ResponseEntity<Trade>(newTrade, HttpStatus.OK);
 	}
 
 }

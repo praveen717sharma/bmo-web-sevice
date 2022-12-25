@@ -7,9 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class BmoWebSeviceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BmoWebSeviceApplication.class, args);
-		
-		
+		SpringApplication.run(BmoWebSeviceApplication.class, args);	
 	}
 
 }

@@ -11,7 +11,7 @@ public class TradeException extends RuntimeException{
 	private String message;
 	private LocalDateTime localDatetime;
 	private String discription;
-
+	
 	public TradeException() {
 		super();
 	}
@@ -20,7 +20,7 @@ public class TradeException extends RuntimeException{
 		super();
 		this.message = message;
 		this.localDatetime = localDatetime;
-		this.discription = discription;
+		this.discription = discription;  
 	}
 
 	public String getMessage() {
