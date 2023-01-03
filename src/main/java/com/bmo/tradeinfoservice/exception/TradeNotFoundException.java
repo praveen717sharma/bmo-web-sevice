@@ -1,4 +1,4 @@
-package com.home.bmowebsevice.exception;
+package com.bmo.tradeinfoservice.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

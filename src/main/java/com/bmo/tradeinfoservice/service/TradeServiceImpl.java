@@ -1,21 +1,21 @@
-package com.home.bmowebsevice.service;
+package com.bmo.tradeinfoservice.service;
 
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.home.bmowebsevice.exception.TradeAlreadyExistException;
-import com.home.bmowebsevice.exception.TradeNotFoundException;
-import com.home.bmowebsevice.model.Trade;
-import com.home.bmowebsevice.repo.TradeRepo;
+import com.bmo.bmomodel.model.Trade;
+import com.bmo.tradeinfoservice.exception.TradeAlreadyExistException;
+import com.bmo.tradeinfoservice.exception.TradeNotFoundException;
+import com.bmo.tradeinfoservice.repo.TradeRepo;
 
 @Service
 public class TradeServiceImpl implements TradeService {
 
 	@Autowired
 	private TradeRepo tradeRepo;
-
+	
 	@Override
 	public Trade saveTrade(Trade trade) {
 
@@ -28,11 +28,6 @@ public class TradeServiceImpl implements TradeService {
 			savedTrade = tradeRepo.save(trade);
 		}
 		return savedTrade;
-
-		/*
-		 * user wants to save trade if trade is available then we should throw exception
-		 * that TradeAlreadyExist. else then we should save the trade
-		 */
 	}
 
 	@Override
@@ -59,7 +54,7 @@ public class TradeServiceImpl implements TradeService {
 
 	@Override
 	public Trade updateTrade(Trade newTrade) {
-		
+
 		Integer id = newTrade.getTradeId();
 		Trade existingTrade = null;
 
@@ -68,10 +63,12 @@ public class TradeServiceImpl implements TradeService {
 
 			existingTrade = oTrade.get();
 
-			existingTrade.setBuyerFirstName(newTrade.getBuyerFirstName());
-			existingTrade.setBuyerLastName(newTrade.getBuyerLastName());
-			existingTrade.setSellerFirstName(newTrade.getSellerFirstName());
-		  	existingTrade.setSellerLastName(newTrade.getSellerLastName());
+			/*
+			 * existingTrade.setBuyerFirstName(newTrade.getBuyerFirstName());
+			 * existingTrade.setBuyerLastName(newTrade.getBuyerLastName());
+			 * existingTrade.setSellerFirstName(newTrade.getSellerFirstName());
+			 * existingTrade.setSellerLastName(newTrade.getSellerLastName());
+			 */
 			existingTrade.setQuantity(newTrade.getQuantity());
 			tradeRepo.save(existingTrade);
 
@@ -79,6 +76,6 @@ public class TradeServiceImpl implements TradeService {
 			throw new TradeNotFoundException("Trade Not Found");
 		}
 		return newTrade;
-	} 
+	}
 
 }

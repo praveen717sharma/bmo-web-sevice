@@ -1,4 +1,4 @@
-package com.home.bmowebsevice.controller;
+package com.bmo.tradeinfoservice.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.home.bmowebsevice.model.Trade;
-import com.home.bmowebsevice.service.TradeService;
+import com.bmo.bmomodel.model.Trade;
+import com.bmo.tradeinfoservice.service.TradeService;
 
 @RestController
 public class TradeController {
@@ -25,13 +25,14 @@ public class TradeController {
 
 		Trade trade = tradeService.getTradebyId(myId);
 		return new ResponseEntity<Trade>(trade, HttpStatus.OK);
+
 	}
-	
+
 	@PostMapping("trade")
 	public ResponseEntity<Trade> saveTrade(@RequestBody Trade myTrade) {
-		
+
 		Trade trade = tradeService.saveTrade(myTrade);
-		return new ResponseEntity<Trade>(trade, HttpStatus.CREATED);
+		return new ResponseEntity<com.bmo.bmomodel.model.Trade>(trade, HttpStatus.CREATED);
 
 	}
 
@@ -41,11 +42,10 @@ public class TradeController {
 		tradeService.deleteTradebyId(myId);
 		return new ResponseEntity<String>("Deleted", HttpStatus.OK);
 	}
- 
+
 	@PutMapping("trade")
 	public ResponseEntity<Trade> updateTrade(@RequestBody Trade trade) {
-		
-		
+
 		Trade newTrade = tradeService.updateTrade(trade);
 		return new ResponseEntity<Trade>(newTrade, HttpStatus.OK);
 	}

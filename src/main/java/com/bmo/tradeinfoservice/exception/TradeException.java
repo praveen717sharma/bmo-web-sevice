@@ -1,4 +1,4 @@
-package com.home.bmowebsevice.exception;
+package com.bmo.tradeinfoservice.exception;
 
 import java.time.LocalDateTime;
 

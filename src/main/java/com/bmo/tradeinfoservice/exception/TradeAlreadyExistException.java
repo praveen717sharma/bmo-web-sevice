@@ -1,4 +1,4 @@
-package com.home.bmowebsevice.exception;
+package com.bmo.tradeinfoservice.exception;
 
 
 public class TradeAlreadyExistException extends RuntimeException{

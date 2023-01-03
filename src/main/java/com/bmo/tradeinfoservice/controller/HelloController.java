@@ -1,4 +1,4 @@
-package com.home.bmowebsevice.controller;
+package com.bmo.tradeinfoservice.controller;
 
 import java.util.Map;
 

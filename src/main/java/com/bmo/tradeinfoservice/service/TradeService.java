@@ -1,6 +1,6 @@
-package com.home.bmowebsevice.service;
+package com.bmo.tradeinfoservice.service;
 
-import com.home.bmowebsevice.model.Trade;
+import com.bmo.bmomodel.model.Trade;
 
 public interface TradeService {
 	
