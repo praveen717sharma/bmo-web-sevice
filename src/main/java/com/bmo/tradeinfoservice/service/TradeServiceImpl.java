@@ -35,12 +35,14 @@ public class TradeServiceImpl implements TradeService {
 
 		Optional<Trade> oTrade = tradeRepo.findById(id);
 		if (oTrade.isPresent()) {
-			return oTrade.get();
+ 			return oTrade.get();
 		} else {
 			throw new TradeNotFoundException("Trade Not Found Message");
 		}
 	}
-
+	
+	
+	
 	@Override
 	public void deleteTradebyId(int id) {
 
@@ -51,7 +53,8 @@ public class TradeServiceImpl implements TradeService {
 			throw new TradeNotFoundException("Trade Not Found");
 		}
 	}
-
+	
+	
 	@Override
 	public Trade updateTrade(Trade newTrade) {
 
@@ -79,3 +82,4 @@ public class TradeServiceImpl implements TradeService {
 	}
 
 }
+ 

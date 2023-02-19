@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.bmo.bmomodel.model.Trade;
 import com.bmo.tradeinfoservice.service.TradeService;
 
@@ -25,7 +24,6 @@ public class TradeController {
 
 		Trade trade = tradeService.getTradebyId(myId);
 		return new ResponseEntity<Trade>(trade, HttpStatus.OK);
-
 	}
 
 	@PostMapping("trade")
@@ -33,7 +31,6 @@ public class TradeController {
 
 		Trade trade = tradeService.saveTrade(myTrade);
 		return new ResponseEntity<com.bmo.bmomodel.model.Trade>(trade, HttpStatus.CREATED);
-
 	}
 
 	@DeleteMapping("trade/{id}")
@@ -50,4 +47,5 @@ public class TradeController {
 		return new ResponseEntity<Trade>(newTrade, HttpStatus.OK);
 	}
 
-}
+}               
+       

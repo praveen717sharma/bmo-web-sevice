@@ -43,7 +43,7 @@ public class HelloController {
 	
 	@PostMapping("createMultiple")
 	public String createResource(@RequestParam Map<String, String> input) {
-
+  
 		String resultName = input.get("name");
 		String resultAge = input.get("age");
 		String resultgGender = input.get("gender");

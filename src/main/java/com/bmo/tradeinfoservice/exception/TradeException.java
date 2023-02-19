@@ -4,9 +4,6 @@ import java.time.LocalDateTime;
 
 public class TradeException extends RuntimeException{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private String message;
 	private LocalDateTime localDatetime;
